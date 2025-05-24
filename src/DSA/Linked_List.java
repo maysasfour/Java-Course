@@ -17,6 +17,7 @@ public class Linked_List {
        myList.add(p1);
        myList.add(p2);
 
+
 //
         int arr[] = new int[size];
     }
