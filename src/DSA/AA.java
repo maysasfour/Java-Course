@@ -82,12 +82,10 @@ public class AA {
         myStack1.push(temp);
 
     }
-    public static void printStack(FolderStack myStack)
-    {
+    public static void printStack(FolderStack myStack) {
 //        System.out.println(myStack.getTop());
 
-        if (myStack.isEmpty())
-        {
+        if (myStack.isEmpty()) {
             return;
         }
 
@@ -103,6 +101,73 @@ public class AA {
 //            cur = cur.getNext();
 //        }
 
+    }
+
+//    public static boolean remove(FolderStack stack, String fileName) {
+//        if (stack == null || fileName == null || stack.isEmpty()) {
+//            return false;
+//        }
+//
+//        FolderStack temp = new FolderStack();
+//        boolean found = false;
+//
+//        while (!stack.isEmpty()) {
+//            FileNode cur = stack.getTop();
+//            stack.pop();
+//
+//            if (!cur.getName().equals(fileName)) {
+//                temp.push(cur);
+//            } else {
+//                found = true;
+//            }
+//        }
+//
+//        while (!temp.isEmpty()) {
+//            FileNode node = temp.getTop();
+//            temp.pop();
+//            stack.push(node);
+//        }
+//
+//        return found;
+//    }
+//
+//
+
+    public static void removeRec(FolderStack myStack,String name) {
+
+        if (myStack.isEmpty())
+            return;
+        if (myStack.getTop().getName().equalsIgnoreCase(name))
+        {
+            myStack.pop();
+            return;
+        }
+        FileNode temp =myStack.getTop();
+        myStack.pop();
+        remove(myStack,name);
+        myStack.push(temp);
+    }
+public static void remove(FolderStack myStack,String name)
+{
+        if (myStack.isEmpty())
+            return;
+        FolderStack temp = new FolderStack();
+        while (!myStack.isEmpty())
+        {
+            if (myStack.getTop().getName().equalsIgnoreCase(name)) {
+                myStack.pop();
+                break;
+            }
+            temp.push(myStack.getTop());
+            myStack.pop();
+
+        }
+while (!temp.isEmpty())
+{
+    myStack.push(temp.getTop());
+    temp.pop();
+
+}
     }
 
     public static void main(String[] args) {
@@ -130,5 +195,6 @@ public class AA {
         Copy(myStack, myStackCopy);
         System.out.println("********");
         printStack(myStackCopy);
+
     }
 }
