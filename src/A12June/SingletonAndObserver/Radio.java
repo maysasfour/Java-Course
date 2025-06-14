@@ -1,4 +1,4 @@
-package A12June;
+package A12June.SingletonAndObserver;
 
 public class Radio extends Channel {
     public Radio(String name) {

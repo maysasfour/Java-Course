@@ -1,4 +1,4 @@
-package A12June;
+package A12June.SingletonAndObserver;
 
 public class Newspaper extends Channel {
     public Newspaper(String name) {

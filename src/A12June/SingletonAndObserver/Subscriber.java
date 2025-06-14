@@ -1,4 +1,4 @@
-package A12June;
+package A12June.SingletonAndObserver;
 
 import java.util.ArrayList;
 

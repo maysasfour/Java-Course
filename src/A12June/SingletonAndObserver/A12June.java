@@ -1,4 +1,4 @@
-package A12June;
+package A12June.SingletonAndObserver;
 
 public class A12June {
     public static void main(String[] args) {
